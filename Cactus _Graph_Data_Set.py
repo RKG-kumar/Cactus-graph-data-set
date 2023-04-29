@@ -1,5 +1,16 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np 
+import math as mt
+import glob
+import pandas as pd
+from matplotlib.pyplot import figure
+import random
+from networkx.algorithms.distance_measures import center
+from networkx.algorithms import community
+# if you get error "No module found" just write command in terminal : pip3 install modulename, and hit enter.
+#for example we wanted to install networkx library type command : 'pip3 install networkx' then hit enter key on keyboard. 
 def genrate_cactusgraph(minimum_nodes, maximum_nodes, gap_in_size):
-    #for file in glob.glob("../DATA/Tree/tree30_3.txt"):
     for v_size in range(minimum_nodes,maximum_nodes,gap_in_size):
         #g = nx.read_adjlist(file, nodetype=int)
         g = nx.generators.random_tree(v_size,seed=5)
@@ -34,3 +45,4 @@ def genrate_cactusgraph(minimum_nodes, maximum_nodes, gap_in_size):
         print(f'../DATA/CACTUS_GRAPH/cactus_{v_size}.txt')
         #brea
 genrate_cactusgraph(100,5000,200)
+# cactus graph genrated of sizes 100, 200,400,600 upto 5000.
